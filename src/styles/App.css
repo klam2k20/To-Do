@@ -1,0 +1,9 @@
+.container {
+  width: 90%;
+  margin: 0rem auto;
+}
+
+.app {
+  width: min(750px, 100%);
+  margin: 0 auto;
+}

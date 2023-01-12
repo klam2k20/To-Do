@@ -1,0 +1,16 @@
+.title {
+   width: 100%;
+   display: inline-block;
+   font-family: 'Poppins';
+   font-size: 4rem;
+   font-weight: 700;
+   text-align: center;
+   color: var(--black-1);
+   margin: 2rem auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
