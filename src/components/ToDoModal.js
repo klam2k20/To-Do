@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { MdOutlineClose } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
@@ -8,11 +7,21 @@ import { addToDo } from "../slice/toDoSlice";
 import "../styles/ToDoModal.css";
 import Button from "./Button";
 
-function ToDoModal({ isOpen, onClose }) {
+function ToDoModal({ type, toDo, isOpen, onClose }) {
   const [task, setTask] = useState("");
   const [status, setStatus] = useState("incomplete");
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (type === "update") {
+      setTask(toDo.task);
+      setStatus(toDo.status);
+    } else {
+      setTask("");
+      setStatus("incomplete");
+    }
+  }, [type, toDo, isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,8 +34,6 @@ function ToDoModal({ isOpen, onClose }) {
           time: new Date().toLocaleString(),
         })
       );
-      setTask("");
-      setStatus("incomplete");
       toast.success("Task Added!");
       onClose();
     } else {
@@ -43,11 +50,14 @@ function ToDoModal({ isOpen, onClose }) {
               <MdOutlineClose />
             </div>
             <form onSubmit={(e) => handleSubmit(e)}>
-              <h1 className="form-title">Add Task</h1>
+              <h1 className="form-title">
+                {type === "update" ? "Update Task" : "Add Task"}
+              </h1>
               <label htmlFor="title">Task</label>
               <input
                 type="text"
                 id="title"
+                value={task}
                 onChange={(e) => setTask(e.target.value)}
               />
               <label htmlFor="status">Status</label>
@@ -61,7 +71,7 @@ function ToDoModal({ isOpen, onClose }) {
               </select>
               <div className="footer">
                 <Button type="primary" action="submit">
-                  Add Task
+                  {type === "update" ? "Update Task" : "Add Task"}
                 </Button>
                 <Button type="secondary" onClick={onClose}>
                   Cancel
