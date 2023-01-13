@@ -53,5 +53,5 @@ export const toDoSlice = createSlice({
 // Think of the toDoSlicer.reducer as a big reducer that runs
 // the specific reducer in the reducer {...} depending on the
 // action type
-export const { addToDo } = toDoSlice.actions;
+export const { addToDo, deleteToDo } = toDoSlice.actions;
 export default toDoSlice.reducer;
