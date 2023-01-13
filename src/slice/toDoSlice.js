@@ -46,6 +46,18 @@ export const toDoSlice = createSlice({
       window.localStorage.setItem("toDoList", JSON.stringify(toDoListArray));
       state.toDoList = toDoListArray;
     },
+    updateToDo: (state, action) => {
+      const toDoList = window.localStorage.getItem("toDoList");
+      let toDoListArray = JSON.parse(toDoList);
+      toDoListArray.forEach((toDoItem) => {
+        if (toDoItem.id === action.payload.id) {
+          toDoItem.task = action.payload.task;
+          toDoItem.status = action.payload.status;
+        }
+      });
+      window.localStorage.setItem("toDoList", JSON.stringify(toDoListArray));
+      state.toDoList = toDoListArray;
+    },
   },
 });
 
@@ -55,5 +67,5 @@ export const toDoSlice = createSlice({
 // Think of the toDoSlicer.reducer as a big reducer that runs
 // the specific reducer in the reducer {...} depending on the
 // action type
-export const { addToDo, deleteToDo } = toDoSlice.actions;
+export const { addToDo, deleteToDo, updateToDo } = toDoSlice.actions;
 export default toDoSlice.reducer;
