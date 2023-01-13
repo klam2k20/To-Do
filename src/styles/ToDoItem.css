@@ -8,6 +8,10 @@
   margin-bottom: 1.5rem;
 }
 
+.toDoItemContainer:last-child{
+  margin-bottom: 0;
+}
+
 .toDoItemContent{
   display: flex;
   justify-content: flex-start;
