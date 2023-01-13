@@ -7,9 +7,9 @@ const styles = {
   select: "btn select",
 };
 
-function Button({ type, children, ...rest }) {
+function Button({ type, action='button', children, ...rest }) {
   return (
-    <button className={styles[type]} {...rest}>
+    <button className={styles[type]} type={action} {...rest}>
       {children}
     </button>
   );
