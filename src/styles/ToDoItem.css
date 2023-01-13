@@ -31,6 +31,15 @@
   margin-bottom: 0.25rem;
 }
 
+.completed {
+  font-weight: 500;
+  color: var(--black-2);
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
 .time {
   font-weight: 300;
   color: var(--black-2);

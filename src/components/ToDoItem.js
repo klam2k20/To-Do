@@ -19,7 +19,11 @@ function ToDoItem({ item }) {
       <div className="toDoItemContent">
         <input type="checkbox" />
         <div className="toDoItemDetails">
-          <span className="task">{item.task}</span>
+          <span
+            className={item.status === "incomplete" ? "task" : "completed task"}
+          >
+            {item.task}
+          </span>
           <span className="time">{item.time}</span>
         </div>
       </div>
