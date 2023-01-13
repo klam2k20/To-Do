@@ -4,12 +4,14 @@ import { deleteToDo } from "../slice/toDoSlice";
 import { MdDelete, MdEdit } from "react-icons/md";
 import Button from "./Button";
 import "../styles/ToDoItem.css";
+import { toast } from "react-hot-toast";
 
 function ToDoItem({ item }) {
   const dispatch = useDispatch();
   const handleDelete = () => {
     console.log("delete");
     dispatch(deleteToDo(item.id));
+    toast.success("Task Deleted!");
   };
 
   return (
