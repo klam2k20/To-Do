@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { MdOutlineClose } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
+import toast from "react-hot-toast";
 import { addToDo } from "../slice/toDoSlice";
 import "../styles/ToDoModal.css";
 import Button from "./Button";
@@ -15,15 +16,22 @@ function ToDoModal({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addToDo({
-        id: uuidv4(),
-        task,
-        status,
-        time: new Date().toLocaleString(),
-      })
-    );
-    onClose();
+    if (task) {
+      dispatch(
+        addToDo({
+          id: uuidv4(),
+          task,
+          status,
+          time: new Date().toLocaleString(),
+        })
+      );
+      setTask("");
+      setStatus("incomplete");
+      toast.success("Task Added!");
+      onClose();
+    } else {
+      toast.error("Enter a Task");
+    }
   };
 
   return (
