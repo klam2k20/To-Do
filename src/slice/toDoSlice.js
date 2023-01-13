@@ -13,6 +13,8 @@ const initialValue = {
   toDoList: getInitialToDoList(),
 };
 
+// createSlice generates action creators and action types that
+// correspond to the reducers and state
 export const toDoSlice = createSlice({
   name: "toDo",
   initialState: initialValue,
@@ -34,5 +36,11 @@ export const toDoSlice = createSlice({
   },
 });
 
+// createSlice returns an action creator with a type of toDo/addToDo
+// when dispatch is called with this action creator it will be directed
+// to the redux store were it will run the reducer with the type.
+// Think of the toDoSlicer.reducer as a big reducer that runs
+// the specific reducer in the reducer {...} depending on the
+// action type
 export const { addToDo } = toDoSlice.actions;
 export default toDoSlice.reducer;
