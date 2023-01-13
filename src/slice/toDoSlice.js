@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const getInitialToDoList = () => {
+  const toDoList = window.localStorage.getItem("toDoList");
+  if (toDoList) {
+    return JSON.parse(toDoList);
+  }
+  window.localStorage.setItem("toDoList", []);
+  return [];
+};
+
 const initialValue = {
-  toDoList: () => {
-    const toDoList = window.localStorage.getItem("toDoList");
-    if (toDoList) {
-      return JSON.parse(toDoList);
-    }
-    window.localStorage.setItem("toDoList", []);
-    return [];
-  },
+  toDoList: getInitialToDoList(),
 };
 
 export const toDoSlice = createSlice({
