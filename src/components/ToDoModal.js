@@ -38,6 +38,10 @@ function ToDoModal({ type, toDo, isOpen, onClose }) {
               status,
             })
           );
+          toast.success("Task Updated!");
+          onClose();
+        } else {
+          toast.error("No Changes Made");
         }
       } else {
         dispatch(
@@ -49,8 +53,8 @@ function ToDoModal({ type, toDo, isOpen, onClose }) {
           })
         );
         toast.success("Task Added!");
+        onClose();
       }
-      onClose();
     }
   };
 
