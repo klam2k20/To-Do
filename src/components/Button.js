@@ -5,9 +5,10 @@ const styles = {
   primary: "btn primary",
   secondary: "btn secondary",
   select: "btn select",
+  icon: "icon",
 };
 
-function Button({ type, action='button', children, ...rest }) {
+function Button({ type, action = "button", children, ...rest }) {
   return (
     <button className={styles[type]} type={action} {...rest}>
       {children}

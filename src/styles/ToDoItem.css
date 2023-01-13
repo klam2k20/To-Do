@@ -1,0 +1,41 @@
+.toDoItemContainer{
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.toDoItemContent{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toDoItemDetails{
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  font-weight: 500;
+  color: var(--black-2);
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.time {
+  font-weight: 300;
+  color: var(--black-2);
+    font-size: 1.1rem;
+}
+
+.toDoItemActions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

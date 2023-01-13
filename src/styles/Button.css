@@ -24,3 +24,14 @@
     width: 15rem;
 }
 
+.icon {
+    padding: 0.5rem;
+    background-color: var(--bg-2);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
