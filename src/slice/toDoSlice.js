@@ -20,6 +20,10 @@ export const toDoSlice = createSlice({
   initialState: initialValue,
   reducers: {
     addToDo: (state, action) => {
+      // createSlice uses a library called Immer inside it. Immer uses
+      // a special JS tool called Proxy to let you write code that mutates
+      // the state. Under the hood Immer tracks all the changes you've made
+      // and returns a safely immutably updated value
       state.toDoList.push(action.payload);
       const toDoList = window.localStorage.getItem("toDoList");
       if (toDoList) {
