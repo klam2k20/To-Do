@@ -39,8 +39,10 @@ export const toDoSlice = createSlice({
     },
     deleteToDo: (state, action) => {
       const toDoList = window.localStorage.getItem("toDoList");
-      const toDoListArray = JSON.parse(toDoList);
-      toDoListArray.filter((toDoItem) => toDoItem.id === action.payload);
+      let toDoListArray = JSON.parse(toDoList);
+      toDoListArray = toDoListArray.filter(
+        (toDoItem) => toDoItem.id !== action.payload
+      );
       window.localStorage.setItem("toDoList", JSON.stringify(toDoListArray));
       state.toDoList = toDoListArray;
     },

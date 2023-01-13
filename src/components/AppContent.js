@@ -9,7 +9,7 @@ function AppContent() {
   return (
     <div className="toDoList">
       {toDoList.map((toDoItem) => (
-        <ToDoItem item={toDoItem} />
+        <ToDoItem key={toDoItem.id} item={toDoItem} />
       ))}
     </div>
   );
