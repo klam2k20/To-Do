@@ -1,4 +1,6 @@
-# To-Do App
+<p align="center">
+    <img src="public/banner.png">
+</p>
 
 <!-- [Preview](https://klam2k20.github.io/Calculator/) -->
 
