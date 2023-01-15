@@ -7,7 +7,8 @@
 ## Overview
 
 This is a responsive To-Do App created with ReactJS. The app has the fundamental CRUD functionalities to create, update and delete tasks.
-It utilizes React-Redux to handle app state, Framer motion for simple animations, and Hot Toast for informative toast messages.
+It utilizes React-Redux to handle app state, Framer motion for simple animations, Hot Toast for informative toast messages, and local
+storage to store tasks in between sessions.
 
 ## Getting Started
 
