@@ -1,11 +1,24 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { deleteToDo } from "../slice/toDoSlice";
+import { deleteToDo, updateToDo } from "../slice/toDoSlice";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { toast } from "react-hot-toast";
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 import "../styles/ToDoItem.css";
 import ToDoModal from "./ToDoModal";
+
+const toDoItemVariant = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 function ToDoItem({ item }) {
   const dispatch = useDispatch();
@@ -20,11 +33,23 @@ function ToDoItem({ item }) {
     setUpdateModalOpen(true);
   };
 
+  const handleCheck = () => {
+    dispatch(
+      updateToDo({
+        ...item,
+        status: item.status === "complete" ? "incomplete" : "complete",
+      })
+    );
+  };
+
   return (
     <>
-      <div className="toDoItemContainer">
+      <motion.div className="toDoItemContainer" variants={toDoItemVariant}>
         <div className="toDoItemContent">
-          <input type="checkbox" />
+          <Checkbox
+            check={item.status === "complete"}
+            handleCheck={handleCheck}
+          />
           <div className="toDoItemDetails">
             <span
               className={
@@ -44,7 +69,7 @@ function ToDoItem({ item }) {
             <MdEdit />
           </Button>
         </div>
-      </div>
+      </motion.div>
       <ToDoModal
         type="update"
         toDo={item}

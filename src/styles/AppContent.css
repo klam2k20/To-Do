@@ -3,3 +3,14 @@
   padding: 2rem;
   border-radius: 1rem;
 }
+
+.empty-list {
+  background-color: var(--gray-2);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  display: block;
+  width: max-content;
+  font-weight: 500;
+}
