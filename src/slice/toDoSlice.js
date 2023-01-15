@@ -11,6 +11,7 @@ const getInitialToDoList = () => {
 
 const initialValue = {
   toDoList: getInitialToDoList(),
+  filter: "all",
 };
 
 // createSlice generates action creators and action types that
@@ -58,6 +59,9 @@ export const toDoSlice = createSlice({
       window.localStorage.setItem("toDoList", JSON.stringify(toDoListArray));
       state.toDoList = toDoListArray;
     },
+    updateFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
 
@@ -67,5 +71,6 @@ export const toDoSlice = createSlice({
 // Think of the toDoSlicer.reducer as a big reducer that runs
 // the specific reducer in the reducer {...} depending on the
 // action type
-export const { addToDo, deleteToDo, updateToDo } = toDoSlice.actions;
+export const { addToDo, deleteToDo, updateToDo, updateFilter } =
+  toDoSlice.actions;
 export default toDoSlice.reducer;
