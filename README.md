@@ -2,7 +2,7 @@
     <img src="public/banner.png">
 </p>
 
-<!-- [Preview](https://klam2k20.github.io/Calculator/) -->
+[Preview](https://klam2k20.github.io/To-Do/)
 
 ## Overview
 
