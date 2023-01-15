@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import Button, { SelectButton } from "./Button";
 import ToDoModal from "./ToDoModal";
-import "../styles/AppHeader.css";
-import { useDispatch, useSelector } from "react-redux";
 import { updateFilter } from "../slice/toDoSlice";
+import "../styles/AppHeader.css";
 
 function AppHeader() {
   const [isModalOpen, setModalOpen] = useState(false);

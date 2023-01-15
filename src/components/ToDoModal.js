@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { MdOutlineClose } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
 import toast from "react-hot-toast";
+
+import Button from "./Button";
 import { addToDo, updateToDo } from "../slice/toDoSlice";
 import "../styles/ToDoModal.css";
-import Button from "./Button";
 
 const overlayVariants = {
   hidden: { opacity: 0 },

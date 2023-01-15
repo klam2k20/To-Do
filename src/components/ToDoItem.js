@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { deleteToDo, updateToDo } from "../slice/toDoSlice";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { toast } from "react-hot-toast";
+
 import Button from "./Button";
 import Checkbox from "./Checkbox";
-import "../styles/ToDoItem.css";
 import ToDoModal from "./ToDoModal";
+import { deleteToDo, updateToDo } from "../slice/toDoSlice";
+import "../styles/ToDoItem.css";
 
 const toDoItemVariant = {
   hidden: {

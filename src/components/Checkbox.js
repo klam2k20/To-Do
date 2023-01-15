@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+
 import "../styles/Checkbox.css";
 
 const boxVariants = {

@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import "../styles/AppContent.css";
+
 import ToDoItem from "./ToDoItem";
+import "../styles/AppContent.css";
 
 const toDoListVariant = {
   hidden: {},
