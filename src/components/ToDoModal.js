@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { MdOutlineClose } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
@@ -6,6 +7,43 @@ import toast from "react-hot-toast";
 import { addToDo, updateToDo } from "../slice/toDoSlice";
 import "../styles/ToDoModal.css";
 import Button from "./Button";
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+const modalVariants = {
+  hidden: {
+    opacity: 0,
+    transform: { scale: 0.9 },
+  },
+  visible: {
+    opacity: 1,
+    transform: { scale: 1 },
+    transition: { duration: 0.1 },
+  },
+  exit: {
+    opacity: 0,
+    transform: { scale: 0.9 },
+  },
+};
+
+const exitVariants = {
+  hidden: {
+    opacity: 0,
+    top: 50,
+  },
+  visible: {
+    opacity: 1,
+    top: -10,
+  },
+  exit: {
+    opacity: 0,
+    top: 50,
+  },
+};
 
 function ToDoModal({ type, toDo, isOpen, onClose }) {
   const [task, setTask] = useState("");
@@ -59,13 +97,33 @@ function ToDoModal({ type, toDo, isOpen, onClose }) {
   };
 
   return (
-    <>
+    <AnimatePresence>
       {isOpen && (
-        <div className="overlay">
-          <div className="content">
-            <div className="closeButton" onClick={onClose} role="button">
+        <motion.div
+          className="overlay"
+          variants={overlayVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          <motion.div
+            className="content"
+            variants={modalVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <motion.div
+              className="closeButton"
+              onClick={onClose}
+              role="button"
+              variants={exitVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
               <MdOutlineClose />
-            </div>
+            </motion.div>
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1 className="form-title">
                 {type === "update" ? "Update Task" : "Add Task"}
@@ -95,10 +153,10 @@ function ToDoModal({ type, toDo, isOpen, onClose }) {
                 </Button>
               </div>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   );
 }
 
