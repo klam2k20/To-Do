@@ -14,7 +14,7 @@ storage to store tasks in between sessions.
 
 ### Prerequisites
 
-- npm
+- yarn
   ```sh
   npm install -g yarn
   ```
