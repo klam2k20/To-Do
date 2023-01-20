@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="public/banner.png">
+    <img src="imgs/banner.png">
 </p>
 
 [Preview](https://klam2k20.github.io/To-Do/)
@@ -10,13 +10,18 @@ This is a responsive To-Do App created with ReactJS. The app has the fundamental
 It utilizes React-Redux to handle app state, Framer motion for simple animations, Hot Toast for informative toast messages, and local
 storage to store tasks in between sessions.
 
+The application was designed to be responsive for various device sizes as seen below: <br> <br>
+<img src="imgs/ToDo-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="imgs/ToDo-md.png" height=500>
+<img src="imgs/ToDo-lg.png" height=500 width=800>
+
 ## Getting Started
 
 ### Prerequisites
 
-- yarn
+- npm
   ```sh
-  npm install -g yarn
+  npm install -g npm
   ```
 
 ### Installation
