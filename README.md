@@ -1,41 +1,66 @@
 <p align="center">
-    <img src="imgs/banner.png">
+    <img src="imgs/demo.gif" height="500">
 </p>
 
 [Preview](https://klam2k20.github.io/To-Do/)
 
 ## Overview
 
-This is a responsive To-Do App created with ReactJS. The app has the fundamental CRUD functionalities to create, update and delete tasks.
-It utilizes React-Redux to handle app state, Framer motion for simple animations, Hot Toast for informative toast messages, and local
-storage to store tasks in between sessions.
+This is a responsive To-Do App. It has the fundamental CRUD functionalities to create, update and delete tasks.
+It utilizes React-Redux to handle app state, Framer motion for simple animations, Hot Toast for informative
+toast messages, and local storage to store tasks in between sessions.
 
-The application was designed to be responsive for various device sizes as seen below: <br> <br>
-<img src="imgs/ToDo-sm.png" height=500> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-<img src="imgs/ToDo-md.png" height=500>
-<img src="imgs/ToDo-lg.png" height=500 width=800>
+## Technology
+
+- <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+- <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white">
+- <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+
+## Features
+
+- Responsive Design
+<p align="center">
+    <img src="imgs/responsive.gif" height="400">
+</p>
+
+- Add Tasks
+<p align="center">
+    <img src="imgs/add-tasks.gif" height="400">
+</p>
+
+- Update Tasks
+<p align="center">
+    <img src="imgs/update-tasks.gif" height="400">
+</p>
+
+- Delete Tasks
+<p align="center">
+    <img src="imgs/delete-tasks.gif" height="400">
+</p>
+
+- Filter Tasks
+<p align="center">
+    <img src="imgs/filter-tasks.gif" height="400">
+</p>
 
 ## Getting Started
 
 ### Prerequisites
 
-- npm
-  ```sh
-  npm install -g npm
-  ```
+- yarn/npm
 
 ### Installation
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/klam2k20/To-Do.git
-   ```
-2. `cd` to project folder
-3. Install yarn packages
-   ```sh
-   yarn install
-   ```
-4. Start React project
-   ```sh
-   yarn start
-   ```
+```sh
+# Clone the repo
+git clone https://github.com/klam2k20/To-Do.git
+
+# cd to project folder
+cd To-Do
+
+# Install dependencies
+yarn install
+
+# Start the application
+yarn start
+```
