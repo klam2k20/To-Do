@@ -2,8 +2,6 @@
     <img src="imgs/demo.gif" height="500">
 </p>
 
-[Preview](https://klam2k20.github.io/To-Do/)
-
 ## Overview
 
 This is a responsive To-Do App. It has the fundamental CRUD functionalities to create, update and delete tasks.
